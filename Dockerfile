@@ -1,12 +1,14 @@
-FROM ruby:3.1
+FROM ruby:3.1.1
 
 ENV LANG C.UTF-8
 ENV APP_ROOT /osusowake
 ENV BUNDLE_JOBS 4
 ENV BUNDLER_VERSION 2.2.25
+ENV RAILS_ENV=production
 
 RUN mkdir $APP_ROOT
 WORKDIR $APP_ROOT
+RUN mkdir -p tmp/sockets
 
 COPY Gemfile $APP_ROOT/Gemfile
 COPY Gemfile.lock $APP_ROOT/Gemfile.lock
@@ -22,4 +24,9 @@ COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
+VOLUME /osusowake/public
+VOLUME /osusowake/tmp
+
 EXPOSE 3000
+
+CMD bash -c "rm -f tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
