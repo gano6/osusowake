@@ -1,5 +1,5 @@
 current directory: /Users/matsugano/osusowake/vendor/bundle/ruby/3.1.0/gems/mysql2-0.5.3/ext/mysql2
-/Users/matsugano/.rbenv/versions/3.1.1/bin/ruby -I /Users/matsugano/.rbenv/versions/3.1.1/lib/ruby/3.1.0 -r ./siteconf20220428-11857-9d1026.rb extconf.rb --with-cppflags\=-I/usr/local/opt/openssl/include
+/Users/matsugano/.rbenv/versions/3.1.1/bin/ruby -I /Users/matsugano/.rbenv/versions/3.1.1/lib/ruby/3.1.0 -r ./siteconf20220430-34284-u247eh.rb extconf.rb --with-cppflags\=-I/usr/local/opt/openssl/include
 checking for rb_absint_size()... yes
 checking for rb_absint_singlebit_p()... yes
 checking for rb_wait_for_single_fd()... yes

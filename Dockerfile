@@ -24,8 +24,8 @@ COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
-VOLUME /osusowake/public
-VOLUME /osusowake/tmp
+VOLUME /app/public
+VOLUME /app/tmp
 
 EXPOSE 3000
 
