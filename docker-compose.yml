@@ -3,6 +3,9 @@ volumes:
   mysql_data:
   vendor_bundle:
   storage:
+  tmp-data:
+  log-data:
+  public-data:
 
 services:
   mysql:
@@ -32,11 +35,11 @@ services:
       - mysql
     volumes:
       - .:/osusowake
-      - /osusowake/log
-      - /osusowake/tmp
+      - log-data:/osusowake/log
+      - public-data:/osusowake/public
+      - tmp-data:/osusowake/tmp
       - vendor_bundle:/osusowake/vendor/bundle
       - storage:/osusowake/storage
     stdin_open: true
     tty: true
     command: bundle exec rails server -b 0.0.0.0
-

@@ -4,7 +4,6 @@ ENV LANG C.UTF-8
 ENV APP_ROOT /osusowake
 ENV BUNDLE_JOBS 4
 ENV BUNDLER_VERSION 2.2.25
-ENV RAILS_ENV=production
 
 RUN mkdir $APP_ROOT
 WORKDIR $APP_ROOT
@@ -24,8 +23,8 @@ COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
-VOLUME /app/public
-VOLUME /app/tmp
+VOLUME $APP_ROOT/public
+VOLUME $APP_ROOT/tmp
 
 EXPOSE 3000
 
