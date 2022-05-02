@@ -58,6 +58,9 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-byebug'
 end
 
 group :development do
