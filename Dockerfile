@@ -1,4 +1,4 @@
-FROM ruby:3.1.1
+FROM ruby:3.0.4
 
 ENV LANG C.UTF-8
 ENV APP_ROOT /osusowake
