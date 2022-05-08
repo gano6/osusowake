@@ -1,0 +1,2 @@
+module Osusowake::HomeHelper
+end
